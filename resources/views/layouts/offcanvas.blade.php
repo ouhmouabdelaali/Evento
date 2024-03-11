@@ -28,8 +28,10 @@
                   <form action="" method="post">  
                   <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#example{{$event->id}}" >
                         Update
+
                     </button>
                   </form>
+       @include('layouts.updateventmodal', ['event' => $event])
              
 
       </div>
@@ -39,4 +41,5 @@
     </div>
   </div>
 </div>
-@include('layouts.updateventmodal',['events'=> $events])
+
+

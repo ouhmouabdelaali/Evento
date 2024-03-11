@@ -16,9 +16,10 @@ class CreateReservationsTable extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('ticket_id');
             $table->string('status')->default('pending');
             $table->timestamps();
-            
+            // $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       
         });

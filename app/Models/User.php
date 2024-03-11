@@ -17,12 +17,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role_id',
     ];
-
+    
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -42,4 +50,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    use HasFactory;
+
+
+
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
+    /**
+     * Get the role that belongs to the user.
+     */
+public function roles()
+{
+    return $this->belongsTo(Role::class);
+
+}
+
+
 }

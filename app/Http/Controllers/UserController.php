@@ -23,7 +23,7 @@ class UserController extends Controller
         $userId=Auth::id();
         $reservation = new Reservation;
         $reservation->user_id = $userId;
-        $reservation->event_id = $eventId;
+        // $reservation->event_id = $eventId;
         $reservation->status = 'valid'; 
         $reservation->save();
          

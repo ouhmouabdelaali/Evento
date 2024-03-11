@@ -34,9 +34,13 @@
 
                     <x-slot name="content">
                          
-                      <x-dropdown-link  type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                      <x-dropdown-link :href="route('events')" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                          {{ __('My Events') }}
                        </x-dropdown-link>
+                       <x-dropdown-link :href="route('events')">
+                            {{ __('events') }}
+                        </x-dropdown-link>   
+
 
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}

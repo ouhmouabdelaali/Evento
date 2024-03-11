@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes; // Import SoftDeletes
 
 class Event extends Model
 {
     use HasFactory;
+    
 
     protected $fillable = [
         'title',
@@ -15,14 +17,9 @@ class Event extends Model
         'date',
         'location',
         'category_id',
-       
+        'seats_available',
+        'image', 
     ];
-    
-
-    public function organizer()
-    {
-        return $this->belongsTo(Organizer::class);
-    }
 
     public function category()
     {
@@ -39,7 +36,4 @@ class Event extends Model
         return $this->hasMany(Reservation::class);
     }
 
-    // :::::alawde soft delete  
-    // use SoftDeletes;  sirr lmigrationchef chne kayn tma
-   
 }

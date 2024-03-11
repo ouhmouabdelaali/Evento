@@ -21,7 +21,10 @@ class Ticket extends Model
     {
         return $this->belongsTo(User::class);
     }
-
+    public function resevation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
     public function event()
     {
         return $this->belongsTo(Event::class);
